@@ -2,21 +2,22 @@ package fi.trashedapps.autographetizr;
 
 import android.app.ActionBar;
 import android.os.Build;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 
 
-public class AutographActivity extends ActionBarActivity {
+public class AutographActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        // Try to hide the StatusBar
+        // Check which SDK version the device is using and
+        // try to hide the StatusBar accordingly.
         if(Build.VERSION.SDK_INT < 16) {
             getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                     WindowManager.LayoutParams.FLAG_FULLSCREEN);
@@ -31,6 +32,11 @@ public class AutographActivity extends ActionBarActivity {
         }
 
         setContentView(R.layout.activity_autograph);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
     }
 
     @Override
