@@ -12,6 +12,8 @@ import android.view.WindowManager;
 
 public class AutographActivity extends AppCompatActivity {
 
+    private AutographWriterView autographWriteView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,6 +32,9 @@ public class AutographActivity extends AppCompatActivity {
             ActionBar actionBar = getActionBar();
             actionBar.hide();
         }
+
+        // Initialize View for writing
+        autographWriteView = (AutographWriterView) findViewById(R.id.autographwriterview);
 
         setContentView(R.layout.activity_autograph);
     }
